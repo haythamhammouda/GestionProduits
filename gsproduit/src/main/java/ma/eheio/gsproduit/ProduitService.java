@@ -6,10 +6,10 @@ import java.util.List;
 public class ProduitService {
 
 
-         private List<Produit> produits = new ArrayList<Produit>();
-	public boolean exist(long id ) {
+    private List<Produit> produits = new ArrayList<Produit>();
+	public boolean exist(long b ) {
 		for(Produit p : produits) {
-			if(p.getId()==id) {
+			if(p.getId()==b) {
 				return true;
 				
 			}
@@ -81,6 +81,16 @@ public class ProduitService {
 		for (Produit produit : produits) {
 			System.out.println("id : " + produit.getId() + " Nom : " + produit.getNom() + " Qté : " + produit.getQuantité() + " Prix : " + produit.getPrix());
 		}
+	}
+
+	public Object getProduits() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Produit exist(boolean equals) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

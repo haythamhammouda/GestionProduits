@@ -8,37 +8,40 @@ public class Produit {
 	private double prix;
 	private int quantité;
 	
-	public Produit(long id, String nom, double prix, int quantité) {
+	public Produit(Long id, String nom, double prix, int quantité) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prix = prix;
 		this.quantité = quantité;
 	}
-	public Produit()
-	{}
 	
 	
 	
-	public String getNom() {
+	
+	@Override
+	public String toString() {
+		return "Produit [id=" + id + ", nom=" + nom + ", prix=" + prix + ", quantité=" + quantité + "]";
+	}
+	final public String getNom() {
 		return nom;
 	}
-	public void setNom(String nom) {
+	final public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public double getPrix() {
+	final public double getPrix() {
 		return prix;
 	}
-	public void setPrix(double prix) {
+	final public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	public int getQuantité() {
+	final public int getQuantité() {
 		return quantité;
 	}
-	public void setQuantité(int quantité) {
+	final public void setQuantité(int quantité) {
 		this.quantité = quantité;
 	}
-	public long getId() {
+	final public long getId() {
 		return id;
 	}
 	
