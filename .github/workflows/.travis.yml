@@ -33,29 +33,3 @@ jobs:
         env:
           ARTIFACT_VERSION: ${{ steps.build.outputs.ARTIFACT_VERSION }}
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Deploy to Maven Repository
-        run: |
-          mvn clean install
-          mvn deploy 
-        env:
-          ARTIFACT_VERSION: ${{ needs.build.outputs.ARTIFACT_VERSION }} # Corrected syntax
-
-  release:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Set Artifact Version
-        run: |
-          ARTIFACT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          echo "Artifact Version: $ARTIFACT_VERSION"
-          echo "artifact_version=$ARTIFACT_VERSION" >> $GITHUB_ENV
