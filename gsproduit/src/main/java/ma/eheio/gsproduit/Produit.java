@@ -15,6 +15,9 @@ public class Produit {
 		this.prix = prix;
 		this.quantité = quantité;
 	}
+	public Produit()
+	{}
+	
 	
 	
 	public String getNom() {
